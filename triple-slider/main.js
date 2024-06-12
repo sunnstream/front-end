@@ -22,3 +22,5 @@ const sliderEl = document.querySelector('.triple-slider');
  * argument: pass .triple-slider element
  */
 createTripleSlider(sliderEl);
+
+alert("main.js triple-slider loaded!")
