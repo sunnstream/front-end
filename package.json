@@ -1,0 +1,19 @@
+{
+  "name": "triple-slider",
+  "version": "1.0.0",
+  "description": "holds the triple slider component",
+  "main": "main.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnstream/front-end.git"
+  },
+  "author": "Chris Brummer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunnstream/front-end/issues"
+  },
+  "homepage": "https://github.com/sunnstream/front-end#readme"
+}
