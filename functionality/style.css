@@ -14,7 +14,7 @@
     content: '';
     border-top: transparent 15px solid;
     border-bottom: transparent 15px solid;
-    border-left: #fff 25px solid;
+    border-left: #000 25px solid;
     top: 50%;
     left: 50%;
     transform: translate(-40%, -50%);
