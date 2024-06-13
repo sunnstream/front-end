@@ -2,11 +2,11 @@
 .play-button {
     width: 80px;
     height: 80px;
-    background-color: #e1434b;
+    background-color: #fff;
     border-radius: 100%;
     border: #fff solid 2px;
     position: relative;
-    animation: shadowPulse 1s infinite linear;
+    animation: shadowPulse 1.5s infinite linear;
 }
 
  .play-button::before {
@@ -29,7 +29,7 @@
     bottom: 0;
     border: #fff solid 2px;
     border-radius: 100%;
-    animation: ringPulse 1s infinite linear;
+    animation: ringPulse 1.5s infinite linear;
 }
 
 @keyframes ringPulse {
