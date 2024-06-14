@@ -77,3 +77,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+//Append rel="nofollow" to all external links
+
+document.addEventListener("DOMContentLoaded", function() {
+  const currentDomain = window.location.hostname;
+
+  const links = document.querySelectorAll('a');
+
+  links.forEach(link => {
+      const linkDomain = new URL(link.href).hostname;
+
+      if (linkDomain !== currentDomain) {
+          link.setAttribute('rel', 'nofollow');
+          link.setAttribute('target', '_blank');
+      }
+  });
+});
+
+
