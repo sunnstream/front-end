@@ -85,7 +85,7 @@ function updateDiscountChipBackground() {
   const discountChip = document.querySelector('.discount_chip');
 
   // Check for the specific combo class with w--current
-  if (document.querySelector('.w--current')) {
+  if (document.querySelector('button_price-tab.w-inline-block.w-tab-link w--current.w--current')) {
       discountChip.style.backgroundColor = '#ffffff'; // Change background color when w--current is added
   } else {
       discountChip.style.backgroundColor = '#F1C43B'; // Reset to default or specify another color
