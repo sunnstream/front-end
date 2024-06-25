@@ -96,4 +96,33 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Function to update the background of discount_chip on the homepage
+function updateDiscountChipBackground() {
+  const button = document.querySelector('.button_price-tab');
+  const discountChip = document.querySelector('.discount_chip');
+
+  if (button.classList.contains('w--is-current')) {
+      discountChip.style.backgroundColor = 'white';
+  } else {
+      discountChip.style.backgroundColor = ''; // Reset to default or specify another color
+  }
+}
+
+// Call the function initially in case the page loads with the class already set
+updateDiscountChipBackground();
+
+// MutationObserver to watch for class changes on the button_price-tab
+const observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+      if (mutation.attributeName === 'class') {
+          updateDiscountChipBackground();
+      }
+  });
+});
+
+// Start observing the button_price-tab for attribute changes
+const button = document.querySelector('.button_price-tab');
+observer.observe(button, {
+  attributes: true // Configure to listen to attribute changes
+});
 
