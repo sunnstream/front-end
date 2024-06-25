@@ -95,34 +95,29 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
-// Function to update the background of discount_chip on the homepage
+// Function to update the background of discount_chip when w--current is added
 function updateDiscountChipBackground() {
-  const button = document.querySelector('.button_price-tab');
   const discountChip = document.querySelector('.discount_chip');
 
-  if (button.classList.contains('w--is-current')) {
-      discountChip.style.backgroundColor = 'white';
+  // Check for the specific combo class with w--current
+  if (document.querySelector('.button_price-tab.w-inline-block.w-tab-link.w--current')) {
+      discountChip.style.backgroundColor = 'white'; // Change background color when w--current is added
   } else {
       discountChip.style.backgroundColor = ''; // Reset to default or specify another color
   }
 }
 
-// Call the function initially in case the page loads with the class already set
-updateDiscountChipBackground();
-
-// MutationObserver to watch for class changes on the button_price-tab
+// MutationObserver to watch for class changes
 const observer = new MutationObserver(mutations => {
   mutations.forEach(mutation => {
       if (mutation.attributeName === 'class') {
-          updateDiscountChipBackground();
+          updateDiscountChipBackground(); // Update background if class changes
       }
   });
 });
 
-// Start observing the button_price-tab for attribute changes
-const button = document.querySelector('.button_price-tab');
+// Start observing the element for attribute changes
+const button = document.querySelector('.button_price-tab.w-inline-block.w-tab-link');
 observer.observe(button, {
-  attributes: true // Configure to listen to attribute changes
+  attributes: true // Listen to attribute changes
 });
-
