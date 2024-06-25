@@ -121,3 +121,16 @@ const button = document.querySelector('.button_price-tab.w-inline-block.w-tab-li
 observer.observe(button, {
   attributes: true // Listen to attribute changes
 });
+
+
+//troubleshooting
+document.addEventListener('DOMContentLoaded', function () {
+  const button = document.querySelector('.button_price-tab.w-inline-block.w-tab-link');
+  if (button) { // Check if the element exists
+      observer.observe(button, {
+          attributes: true // Listen to attribute changes
+      });
+  } else {
+      console.log('The element does not exist!');
+  }
+});
