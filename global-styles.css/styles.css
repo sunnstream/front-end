@@ -1,0 +1,68 @@
+
+.play-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: #fff solid 2px;
+    position: relative;
+    animation: shadowPulse 2s infinite linear;
+}
+
+ .play-button::before {
+    position: absolute;
+    content: '';
+    border-top: transparent 15px solid;
+    border-bottom: transparent 15px solid;
+    border-left: #000 25px solid;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+}
+
+.play-button::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: #fff solid 2px;
+    border-radius: 100%;
+    animation: ringPulse 2s infinite linear;
+}
+
+@keyframes ringPulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80%, 100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0 0 4px 3px transparent,
+                    0 0 0 0 transparent,
+                    0 0 0 0 transparent;
+    }
+
+    10% {
+        box-shadow: 0 0 4px 3px #fff,
+                    0 0 6px 5px transparent,
+                    0 0 6px 2.5px #fff;
+    }
+
+    80%, 100% {
+        box-shadow: 0 0 4px 3px transparent,
+                    0 0 0 20px transparent,
+                    0 0 0 20px transparent;
+    }
+}
