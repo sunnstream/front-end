@@ -1,10 +1,10 @@
 
 .play-button {
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    background-color: #F1C43B;
     border-radius: 100%;
-    border: #fff solid 2px;
+    border: #F1C43B solid 2px;
     position: relative;
     animation: shadowPulse 2s infinite linear;
 }
@@ -12,9 +12,9 @@
  .play-button::before {
     position: absolute;
     content: '';
-    border-top: transparent 7.5px solid;
-    border-bottom: transparent 7.5px solid;
-    border-left: #000 25px solid;
+    border-top: transparent 15px solid;
+    border-bottom: transparent 15px solid;
+    border-left: #fff 25px solid;
     top: 50%;
     left: 50%;
     transform: translate(-40%, -50%);
@@ -50,20 +50,20 @@
 
 @keyframes shadowPulse {
     0% {
-        box-shadow: 0 0 2px 1.5px transparent,
+        box-shadow: 0 0 8px 6px transparent,
                     0 0 0 0 transparent,
                     0 0 0 0 transparent;
     }
 
     10% {
-        box-shadow: 0 0 2px 1.5px #fff,
-                    0 0 3px 2.5px transparent,
-                    0 0 3px 1.25px #fff;
+        box-shadow: 0 0 8px 6px #fff,
+                    0 0 12px 10px transparent,
+                    0 0 12px 5px #fff;
     }
 
     80%, 100% {
-        box-shadow: 0 0 2px 1.5px transparent,
-                    0 0 0 10px transparent,
-                    0 0 0 10px transparent;
+        box-shadow: 0 0 8px 6px transparent,
+                    0 0 0 40px transparent,
+                    0 0 0 40px transparent;
     }
 }
