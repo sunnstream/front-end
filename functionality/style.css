@@ -1,10 +1,10 @@
 
 .play-button {
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    background-color: #F1C43B;
     border-radius: 100%;
-    border: #fff solid 2px;
+    border: #F1C43B solid 2px;
     position: relative;
     animation: shadowPulse 2s infinite linear;
 }
@@ -14,7 +14,7 @@
     content: '';
     border-top: transparent 15px solid;
     border-bottom: transparent 15px solid;
-    border-left: #000 25px solid;
+    border-left: #fff 25px solid;
     top: 50%;
     left: 50%;
     transform: translate(-40%, -50%);
