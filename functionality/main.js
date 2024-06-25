@@ -96,24 +96,40 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Function to update the background of discount_chip when w--current is added
-function updateDiscountChipBackground() {
-  const discountChip = document.querySelector('.discount_chip');
+document.addEventListener('DOMContentLoaded', () => {
+  // Function to update the background of discount_chip when w--current is added
+  function updateDiscountChipBackground() {
+    const discountChip = document.querySelector('.discount_chip');
 
-  // Check for the specific combo class with w--current
-  if (document.querySelector('.button_price-tab.w-inline-block.w-tab-link.w--current')) {
-      discountChip.style.backgroundColor = 'white'; // Change background color when w--current is added
-  } else {
-      discountChip.style.backgroundColor = ''; // Reset to default or specify another color
+    // Check for the specific combo class with w--current
+    if (document.querySelector('.button_price-tab.w-inline-block.w-tab-link.w--current')) {
+        discountChip.style.backgroundColor = '#ffffff'; // Change background color when w--current is added
+    } else {
+        discountChip.style.backgroundColor = '#F1C43B'; // Reset to default or specify another color
+    }
   }
-}
 
-// MutationObserver to watch for class changes
-const observer = new MutationObserver(mutations => {
-  mutations.forEach(mutation => {
-      if (mutation.attributeName === 'class') {
-          updateDiscountChipBackground(); // Update background if class changes
-      }
+  // MutationObserver to watch for class changes
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+        if (mutation.attributeName === 'class') {
+            updateDiscountChipBackground(); // Update background if class changes
+        }
+    });
   });
+
+  // Ensure the button element exists before observing
+  const button = document.querySelector('.button_price-tab.w-inline-block.w-tab-link');
+  if (button) {
+    observer.observe(button, {
+      attributes: true // Listen to attribute changes
+    });
+  } else {
+    console.error('Button element not found for MutationObserver.');
+  }
+
+  // Initial call to set the correct background on page load
+  updateDiscountChipBackground();
 });
 
 // Start observing the element for attribute changes
