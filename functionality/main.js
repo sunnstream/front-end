@@ -117,7 +117,7 @@ const observer = new MutationObserver(mutations => {
 });
 
 // Start observing the element for attribute changes
-const button = document.querySelector('.button_price-tab.w-inline-block.w-tab-link');
+const button = document.querySelector('.button_price-tab .w-inline-block .w-tab-link');
 observer.observe(button, {
   attributes: true // Listen to attribute changes
 });
