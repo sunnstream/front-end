@@ -107,3 +107,29 @@ observer.observe(button, {
   attributes: true // Listen to attribute changes
 });
 
+//Discount Chip mutation
+document.addEventListener("DOMContentLoaded", function() {
+  const targetClassName = 'w--current';
+  const buttons = document.querySelectorAll('.button_price-tab');
+  const discountChips = document.querySelectorAll('.discount_chip');
+
+  const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (mutation.target.classList.contains(targetClassName)) {
+                  discountChips.forEach(chip => {
+                      chip.style.backgroundColor = '#fff';
+                  });
+              } else {
+                  discountChips.forEach(chip => {
+                      chip.style.backgroundColor = 'var(--primary-yellow)';
+                  });
+              }
+          }
+      });
+  });
+
+  buttons.forEach(button => {
+      observer.observe(button, { attributes: true });
+  });
+});
