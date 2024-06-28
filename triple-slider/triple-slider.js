@@ -27,6 +27,7 @@ function createTripleSlider(el) {
   // Add "main" class
   swiperEl.classList.add('triple-slider-main');
 
+
   // common params for all swipers
   const commonParams = {
     

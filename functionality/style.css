@@ -67,3 +67,9 @@
                     0 0 0 40px transparent;
     }
 }
+
+
+.airtable-embed {
+    height: 100%;
+    max-height: 800px;
+}
