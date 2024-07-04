@@ -133,3 +133,11 @@ document.addEventListener("DOMContentLoaded", function() {
       observer.observe(button, { attributes: true });
   });
 });
+
+//Mobile lightbox tap trigger
+$(document).ready(function() {
+  $('.play_button').click(function(e) {
+    e.preventDefault();
+    $('#hero_video').trigger('tap');
+  });
+});
