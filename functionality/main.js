@@ -110,7 +110,7 @@ observer.observe(button, {
 //Discount Chip mutation
 document.addEventListener("DOMContentLoaded", function() {
   const targetClassName = 'w--current';
-  const buttons = document.querySelectorAll('.button_price-tab');
+  const buttons = document.querySelectorAll('.button_tab');
   const discountChips = document.querySelectorAll('.discount_chip');
 
   const observer = new MutationObserver((mutations) => {
