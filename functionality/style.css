@@ -1,3 +1,14 @@
+:root {
+    --vw-rem: 1rem; /* Initial fallback value */
+  }
+
+  .hero_text-wrapper {
+    font-size: 18vw; /* Default for non-Safari browsers */
+  }
+
+  .safari .hero_text-wrapper {
+    font-size: calc(var(--vw-rem) * 18); /* Custom calculation for Safari */
+  }
 
 .play-button {
     width: 60px;

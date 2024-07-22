@@ -141,3 +141,24 @@ $(document).ready(function() {
     $('#hero_video').trigger('tap');
   });
 });
+
+//Safari Browser compatibility for VH/VW units.
+
+
+function isSafari() {
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+}
+
+function updateVwRem() {1vw in pixels
+  const vw = window.innerWidth / 100; 
+  const vwRemValue = vw / rem; // Convert 1vw to rem
+
+  document.documentElement.style.setProperty('--vw-rem', vwRemValue + 'rem');
+}
+
+if (isSafari()) {
+  document.documentElement.classList.add('safari');
+  updateVwRem();
+  window.addEventListener('resize', updateVwRem);
+  document.addEventListener('DOMContentLoaded', updateVwRem);
+}
