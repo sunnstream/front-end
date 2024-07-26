@@ -151,6 +151,7 @@ function isSafari() {
 
 function updateVwRem() {1vw in pixels
   const vw = window.innerWidth / 100; 
+  const rem = parseFloat(getComputedStyle(document.documentElement).fontSize); // Root font size in pixels
   const vwRemValue = vw / rem; // Convert 1vw to rem
 
   document.documentElement.style.setProperty('--vw-rem', vwRemValue + 'rem');
